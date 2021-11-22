@@ -1,7 +1,7 @@
 import './App.css';
-import JokeDataFecth from '/Users/akhila/AkhilaFrontend/frontend-homework/stressfree/src/Joke/jokedatafecth.js'
-import LaunchPage from '/Users/akhila/AkhilaFrontend/frontend-homework/stressfree/src/LaunchPage/Launchpage.js';
-//import Joke from '/Users/akhila/AkhilaFrontend/frontend-homework/stressfree/src/Joke/joke.js'
+import JokeDataFecth from './Components/Joke/jokedatafecth.js'
+import LaunchPage from './Components/LaunchPage/Launchpage.js';
+import Joke from './Components/Joke/joke'
 function App() {
   return (
     <div>

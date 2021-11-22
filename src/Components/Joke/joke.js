@@ -1,4 +1,4 @@
-//import JokeDataFecth from './JokeDataFecth'
+import JokeDataFecth from './jokedatafecth'
 
 export default function Joke(props){
     return(
