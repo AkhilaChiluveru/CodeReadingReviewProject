@@ -1,0 +1,16 @@
+#countryname {
+  border: 1px solid black;
+  outline: none;
+
+  width: 33%;
+  line-height: 30px;
+
+  margin-top: 3em;
+  border-radius: 5px;
+}
+select {
+  height: 2.5em;
+}
+.countryNameInput {
+  margin: 3%;
+}

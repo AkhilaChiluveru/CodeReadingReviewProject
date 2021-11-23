@@ -1,31 +1,16 @@
-import React from "react"
-//import JokeDataFecth from './jokedatafecth'
-/*
-export default function Joke(props){
-    console.log(props)
-    return(
-        <div> <h1>{props.joke}</h1> </div>
-    )
-}
-*/
+import React from 'react';
 
 
-class Joke extends React.Component {
-    constructor(){
-        
-
-    }
-
-
+class Home extends React.Component {
     render() {
       
         return (
             <React.Fragment>
-                <div id='jokeDisplay'>
+                <div id='welcomemessge'>
                     <h1>Welcome !!!!</h1>
                 </div>
             </React.Fragment>
         )
     }
 }
-export default Joke;
+export default Home;

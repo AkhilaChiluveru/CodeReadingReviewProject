@@ -1,6 +1,5 @@
 import './App.css';
-//import JokeDataFecth from './Components/Joke/jokedatafecth.js'
-//import LaunchPage from './Components/LaunchPage/Launchpage.js';
+import MainNews from './Components/News/MainNews'
 import Joke from './Components/Joke/joke'
 import { Nav, NavItem } from 'react-bootstrap';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
@@ -23,10 +22,8 @@ function App() {
           <NavItem className="navs">
               <Link className="nav-link" to="/joke"> 
                 <div className="jokedisplay">
-                  <label for="jokeicon">
                     <img id="jokeicon"src={jokeicon} alt="joke-logo" height="50em" width="50em"/>
                     <p>Joke</p>
-                  </label>
                 </div>
               </Link>
             </NavItem>
@@ -34,70 +31,56 @@ function App() {
           <NavItem className="navs">  
             <Link className="nav-link" to="/dictionary">
               <div className="dictionarydisplay">
-                <label for="dictionaryicon">
                   <img id="dictionaryicon"src={dictionaryicon} alt="dictionary-logo" height="50em" width="50em"/>
                   <p>Dictionary</p>
-                </label>
               </div>
             </Link>
           </NavItem>
           <NavItem className="navs">  
             <Link className="nav-link" to="/news">
               <div className="newsdisplay">
-                <label for="newsicon">
                   <img id="newsicon"src={newsicon} alt="news-logo" height="50em" width="50em"/>
                   <p>News</p>
-                </label>
               </div>
             </Link> 
           </NavItem>
           <NavItem className="navs">
             <Link className="nav-link" to="/advice">
               <div className="advicedisplay">
-                <label for="adviceicon">
                   <img id="adviceicon"src={adviceicon} alt="advice-logo" height="50em" width="50em"/>
                   <p>Advice</p>
-                </label>
               </div>
             </Link>
           </NavItem>
           <NavItem className="navs">
             <Link className="nav-link" to="/music">
                 <div className="musicdisplay">
-                <label for="musicicon">
                   <img id="musicicon"src={musicicon} alt="music-logo" height="50em" width="50em"/>
                   <p>Music</p>
-                </label>
               </div>
             </Link> 
           </NavItem>
           <NavItem className="navs"> 
             <Link className="nav-link" to="/events">
              <div className="eventsdisplay">
-                <label for="eventsicon">
                   <img id="eventsicon"src={eventsicon} alt="events-logo" height="50em" width="50em"/>
                   <p>Events</p>
-                </label>
               </div>
             </Link>
           </NavItem>
           <NavItem className="navs">
             <Link className="nav-link" to="/quotes">
               <div className="quotesdisplay">
-                <label for="quotesicon">
                   <img id="quotesicon"src={quoteicon} alt="quotes-logo" height="50em" width="50em"/>
                   <p>Quotes</p>
-                </label>
               </div>
             </Link>
           </NavItem>
           <NavItem className="navs">  
             <Link className="nav-link" to="/gifs">
             <div className="gifsdisplay">
-                <label for="gifsicon">
                   <img id="gifsicon"src={gifsicon} alt="gifs-logo" height="50em" width="50em"/>
                   <p>GIFs</p>
-                </label>
               </div>
               </Link> 
               </NavItem>
@@ -105,9 +88,10 @@ function App() {
       </div>
 
       <Routes>
+          <Route exact path='#' element={<LaunchPage />}></Route>
           <Route exact path='/joke' element={<Joke />}></Route>
-          
-         
+          <Route exact path='/news' element={<MainNews />}></Route>
+
         </Routes>
 </BrowserRouter>
    
@@ -117,6 +101,11 @@ export default App;
 
 
 /*
- <Route exact path='/advice' element={<Advice />}></Route>
-          <Route exact path='/News' element={<News />}></Route>
+ <Route exact path='/joke' element={<Joke />}></Route>
+          <Route exact path='/advice' element={<Joke />}></Route>
+          
+          <Route exact path='/quotes' element={<Joke />}></Route>
+          <Route exact path='/dictionary' element={<Joke />}></Route>
+          <Route exact path='/music' element={<Joke />}></Route>
+           <Route exact path='/gifs' element={<Joke />}></Route>
 */
