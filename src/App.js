@@ -1,8 +1,10 @@
+import { Nav, NavItem } from 'react-bootstrap';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+
 import './App.css';
 import MainNews from './Components/News/MainNews'
 import Joke from './Components/Joke/joke'
-import { Nav, NavItem } from 'react-bootstrap';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import GIFs from './Components/GIFs/gif'
 import LaunchPage from './Components/LaunchPage/Launchpage';
 import jokeicon from './Logos/joke-icon.jpeg'
 import dictionaryicon from './Logos/dictionary-icon.png'
@@ -91,7 +93,7 @@ function App() {
           <Route exact path='#' element={<LaunchPage />}></Route>
           <Route exact path='/joke' element={<Joke />}></Route>
           <Route exact path='/news' element={<MainNews />}></Route>
-
+         
         </Routes>
 </BrowserRouter>
    
@@ -107,5 +109,5 @@ export default App;
           <Route exact path='/quotes' element={<Joke />}></Route>
           <Route exact path='/dictionary' element={<Joke />}></Route>
           <Route exact path='/music' element={<Joke />}></Route>
-           <Route exact path='/gifs' element={<Joke />}></Route>
+            <Route exact path='/gifs' element={<GIFs />}></Route>
 */

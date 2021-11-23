@@ -11,6 +11,7 @@ class LaunchPage extends React.Component {
                     <p className="lead">Stress is common, but coming out of it is Fun!!</p>
                     <p>Try these activities, and enjoy!</p>
                 </div>    
+                <div className="GIF"></div>
             </React.Fragment>
         )
     }
