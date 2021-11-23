@@ -1,7 +1,7 @@
 
 
 
-
+/*
 export  function JokeDataFecth(){
     const  url="https://geek-jokes.sameerkumar.website/api?format=json";
     let joke;
@@ -18,6 +18,22 @@ export  function JokeDataFecth(){
     </div>)
 
     } 
+*/
 
+/*
 
+export default function JokeDataFecth(){
+    const  url="https://geek-jokes.sameerkumar.website/api?format=json";
+    fetch(url)
+    .then(res=> res.json())
+    .then(data=> {
+        console.log("data:"+data)
+        JokeComponent=data.joke
+        console.log("JokeComponent:"+ JokeComponent)
+        return(
+            JokeComponent
+        )}
+    )
+    }
 
+    */
