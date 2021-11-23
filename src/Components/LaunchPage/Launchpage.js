@@ -8,7 +8,7 @@ class LaunchPage extends React.Component {
             <React.Fragment>
                 <div className="jumbotron" id="jumbo">
                     <h1 className="display-3">StressFree Reliver</h1>
-                    <p className="lead">stress is common, but coming out of it is Fun!!</p>
+                    <p className="lead">Stress is common, but coming out of it is Fun!!</p>
                     <p>Try these activities, and enjoy!</p>
                 </div>    
             </React.Fragment>

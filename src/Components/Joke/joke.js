@@ -11,6 +11,12 @@ export default function Joke(props){
 
 
 class Joke extends React.Component {
+    constructor(){
+        
+
+    }
+
+
     render() {
       
         return (
