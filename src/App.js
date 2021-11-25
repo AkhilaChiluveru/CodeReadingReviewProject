@@ -36,6 +36,18 @@ function App() {
       </>
     );
   };
+  const createDisplayDataQuotes = (data) => {
+   
+    let RandomNumber = Math.floor(Math.random() * 100);
+    console.log("RandomNumber" + RandomNumber);
+    console.log(data[RandomNumber].en + "," + data[RandomNumber].author);
+    return ( <> </>
+     // <div className="QuotesDisplay">
+      //  <span>{data[RandomNumber].en} </span>
+      //  <span>{data[RandomNumber].author}</span>
+      //</div>
+    );
+  };
   const apiResponseHandler = (url, eventName) => {
     fetch(url)
       .then((res) => res.json())
@@ -48,6 +60,9 @@ function App() {
           setDisplayData(createDisplayDataDictionary(data[0]));
         } else if (eventName === "advice") {
           setDisplayData(createDisplayDataAdvice(data.slip.advice));
+        }
+        else if (eventName === "quotes") {
+          setDisplayData(createDisplayDataQuotes(data));
         }
       });
   };
