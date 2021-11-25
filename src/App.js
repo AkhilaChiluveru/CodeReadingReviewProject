@@ -25,6 +25,15 @@ function App() {
       </>
     );
   };
+  const createDisplayDataAdvice = (data) => {
+    return (
+      <>
+        <div className="AdviceDisplay">
+          <span>{`${data}`}</span>
+        </div>
+      </>
+    );
+  };
   const apiResponseHandler = (url, eventName) => {
     fetch(url)
       .then((res) => res.json())
@@ -35,7 +44,8 @@ function App() {
           setDisplayData(createDisplayDataJoke(data.joke));
         } else if (eventName === "dictionary") {
           setDisplayData(createDisplayDataDictionary(data[0]));
-        }
+        }else if (eventName === "advice") {
+          setDisplayData(createDisplayDataAdvice(data.slip.advice)); }
       });
   };
 
