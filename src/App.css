@@ -6,7 +6,8 @@
 .navContainer,
 .Jokedisplay,
 .dictionarydisplay,
-.AdviceDisplay {
+.AdviceDisplay,
+.QuotesDisplay {
   margin-top: 2em;
   border-radius: 1em;
   border: groove;
