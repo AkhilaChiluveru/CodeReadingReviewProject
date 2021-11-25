@@ -1,27 +1,31 @@
-import { Nav, NavItem } from 'react-bootstrap';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter } from "react-router-dom";
 import React, { useState } from "react";
-
-import './App.css';
-import MainNews from './Components/News/MainNews'
-import LaunchPage from './Components/LaunchPage/Launchpage';
+import "./App.css";
+import LaunchPage from "./Components/LaunchPage/Launchpage";
 import Events from "./Components/Events/events";
-
 import Display from "./Components/DisplayEvent";
 import { eventsConfig } from "./config";
-
 
 function App() {
   const [isEvent, setIsEvent] = useState(false);
   const [displayData, setDisplayData] = useState();
+
   const createDisplayDataJoke = (data) => {
-    console.log("data from joke call"+data)
+    console.log("data from joke call" + data);
+    return <div className="Jokedisplay">{data}</div>;
+  };
+  const createDisplayDataDictionary = (data) => {
     return (
-        <div className="Jokedisplay">{data}</div>
+      <>
+        <div className="dictionarydisplay">
+          <div className="dictionaryWord">{`${data.word}`}</div>
+          <div className="dictionaryDefinition">{`Meaning: ${data.definition}`}</div>
+          <div className="dictionaryPronunciation">{`Pronunciation:   ${data.pronunciation}`}</div>
+        </div>
+      </>
     );
   };
   const apiResponseHandler = (url, eventName) => {
-    
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
@@ -29,27 +33,26 @@ function App() {
         setIsEvent(false);
         if (eventName === "jokes") {
           setDisplayData(createDisplayDataJoke(data.joke));
+        } else if (eventName === "dictionary") {
+          setDisplayData(createDisplayDataDictionary(data[0]));
         }
       });
-    }
+  };
 
   return (
-<BrowserRouter>
-  <LaunchPage />
-    <div className = 'navContainer'>
-      <div className="AllIconsDisplay">
+    <BrowserRouter>
+      <LaunchPage />
+      <div className="navContainer">
+        <div className="AllIconsDisplay">
           {eventsConfig.map((data) => {
             return <Events eventData={data} iconClick={apiResponseHandler} />;
           })}
+        </div>
       </div>
-   </div>
-     <div className="output">
-          {displayData && <Display displayContent={displayData} />}
-    </div>
-</BrowserRouter>
-   
+      <div className="output">
+        {displayData && <Display displayContent={displayData} />}
+      </div>
+    </BrowserRouter>
   );
 }
 export default App;
-
-
