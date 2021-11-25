@@ -1,11 +1,14 @@
 import { Nav, NavItem } from 'react-bootstrap';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import React, { useState } from "react";
 
 import './App.css';
 import MainNews from './Components/News/MainNews'
 import LaunchPage from './Components/LaunchPage/Launchpage';
-import jokeicon from './Logos/joke-icon.jpeg'
+import Events from "./Components/Events/events";
 import dictionaryicon from './Logos/dictionary-icon.png'
+import Display from "./Components/DisplayEvent";
+import { eventsConfig } from "./config";
 import newsicon  from './Logos/news-icon.png'
 import gifsicon from './Logos/GIfs-icon.gif'
 import musicicon from './Logos/music-icon.png'
@@ -14,72 +17,37 @@ import adviceicon from './Logos/advice-icon.png'
 import eventsicon from './Logos/events-icon.png'
 
 function App() {
+  const [isEvent, setIsEvent] = useState(false);
+  const apiResponseHandler = (url, eventName) => {
+    //let headers = {};
+    /* if(eventName === 'gifs'){
+      headers ={
+        method:'GET',
+        headers:{"api_key":'frr4Czt15JJUC0jn5Vyl5Rgp8Dg9IHSO'}
+      }
+    } */
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setIsEvent(false);
+        if (eventName === "jokes") {
+          //setDisplayData(createDisplayDataJoke(data.joke));
+        }
+      });
+    }
+
   return (
 <BrowserRouter>
   <LaunchPage />
     <div className = 'navContainer'>
-      <Nav className="ml-auto" >
-          
-
-          <NavItem className="navs">  
-            <Link className="nav-link" to="/dictionary">
-              <div className="dictionarydisplay">
-                  <img id="dictionaryicon"src={dictionaryicon} alt="dictionary-logo" height="50em" width="50em"/>
-                  <p>Dictionary</p>
-              </div>
-            </Link>
-          </NavItem>
-          <NavItem className="navs">  
-            <Link className="nav-link" to="/news">
-              <div className="newsdisplay">
-                  <img id="newsicon"src={newsicon} alt="news-logo" height="50em" width="50em"/>
-                  <p>News</p>
-              </div>
-            </Link> 
-          </NavItem>
-          <NavItem className="navs">
-            <Link className="nav-link" to="/advice">
-              <div className="advicedisplay">
-                  <img id="adviceicon"src={adviceicon} alt="advice-logo" height="50em" width="50em"/>
-                  <p>Advice</p>
-              </div>
-            </Link>
-          </NavItem>
-          <NavItem className="navs">
-            <Link className="nav-link" to="/music">
-                <div className="musicdisplay">
-                  <img id="musicicon"src={musicicon} alt="music-logo" height="50em" width="50em"/>
-                  <p>Music</p>
-              </div>
-            </Link> 
-          </NavItem>
-          <NavItem className="navs"> 
-            <Link className="nav-link" to="/events">
-             <div className="eventsdisplay">
-                  <img id="eventsicon"src={eventsicon} alt="events-logo" height="50em" width="50em"/>
-                  <p>Events</p>
-              </div>
-            </Link>
-          </NavItem>
-          <NavItem className="navs">
-            <Link className="nav-link" to="/quotes">
-              <div className="quotesdisplay">
-                  <img id="quotesicon"src={quoteicon} alt="quotes-logo" height="50em" width="50em"/>
-                  <p>Quotes</p>
-              </div>
-            </Link>
-          </NavItem>
-          <NavItem className="navs">  
-            <Link className="nav-link" to="/gifs">
-            <div className="gifsdisplay">
-                  <img id="gifsicon"src={gifsicon} alt="gifs-logo" height="50em" width="50em"/>
-                  <p>GIFs</p>
-              </div>
-              </Link> 
-              </NavItem>
-        </Nav>
-      </div>
-
+    <div className="AllIconsDisplay">
+          {eventsConfig.map((data) => {
+            return <Events eventData={data} iconClick={apiResponseHandler} />;
+          })}
+        </div>
+      
+</div>
       <Routes>
           <Route exact path='#' element={<LaunchPage />}></Route>         
           <Route exact path='/news' element={<MainNews />}></Route>
