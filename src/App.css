@@ -14,3 +14,19 @@
   margin-right: 5%;
   margin-left: 5%;
 }
+.dictionaryWord {
+  color: black;
+  font-size: 3em;
+  font-weight: bolder;
+  padding-left: 2%;
+}
+.dictionaryDefinition {
+  color: rgb(43, 42, 42);
+  font-size: 2em;
+  padding-left: 2%;
+}
+.dictionaryPronunciation {
+  color: rgb(85, 79, 79);
+  padding-left: 2%;
+  padding-top: 1%;
+}
