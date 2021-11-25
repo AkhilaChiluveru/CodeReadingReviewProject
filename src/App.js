@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
 import './App.css';
 import MainNews from './Components/News/MainNews'
-import Joke from './Components/Joke/joke'
 import GIFs from './Components/GIFs/gif'
 import LaunchPage from './Components/LaunchPage/Launchpage';
 import jokeicon from './Logos/joke-icon.jpeg'
@@ -90,8 +89,7 @@ function App() {
       </div>
 
       <Routes>
-          <Route exact path='#' element={<LaunchPage />}></Route>
-          <Route exact path='/joke' element={<Joke />}></Route>
+          <Route exact path='#' element={<LaunchPage />}></Route>         
           <Route exact path='/news' element={<MainNews />}></Route>
          
         </Routes>
