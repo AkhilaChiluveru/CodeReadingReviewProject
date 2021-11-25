@@ -4,7 +4,8 @@
   justify-content: space-around;
 }
 .navContainer,
-.Jokedisplay {
+.Jokedisplay,
+.dictionarydisplay {
   margin-top: 2em;
   border-radius: 1em;
   border: groove;
