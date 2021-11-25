@@ -1,9 +1,10 @@
-.ml-auto {
+.AllIconsDisplay {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
-.navContainer {
+.navContainer,
+.Jokedisplay {
   margin-top: 2em;
   border-radius: 1em;
   border: groove;
