@@ -18,6 +18,13 @@ import eventsicon from './Logos/events-icon.png'
 
 function App() {
   const [isEvent, setIsEvent] = useState(false);
+  const [displayData, setDisplayData] = useState();
+  const createDisplayDataJoke = (data) => {
+    console.log("data from joke call"+data)
+    return (
+        <div className="Jokedisplay">{data}</div>
+    );
+  };
   const apiResponseHandler = (url, eventName) => {
     //let headers = {};
     /* if(eventName === 'gifs'){
@@ -32,7 +39,7 @@ function App() {
         console.log(data);
         setIsEvent(false);
         if (eventName === "jokes") {
-          //setDisplayData(createDisplayDataJoke(data.joke));
+          setDisplayData(createDisplayDataJoke(data.joke));
         }
       });
     }
@@ -41,13 +48,15 @@ function App() {
 <BrowserRouter>
   <LaunchPage />
     <div className = 'navContainer'>
-    <div className="AllIconsDisplay">
+      <div className="AllIconsDisplay">
           {eventsConfig.map((data) => {
             return <Events eventData={data} iconClick={apiResponseHandler} />;
           })}
-        </div>
-      
-</div>
+      </div>
+   </div>
+   <div className="output">
+          {displayData && <Display displayContent={displayData} />}
+    </div>
       <Routes>
           <Route exact path='#' element={<LaunchPage />}></Route>         
           <Route exact path='/news' element={<MainNews />}></Route>
