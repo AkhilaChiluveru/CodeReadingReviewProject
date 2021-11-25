@@ -24,8 +24,8 @@ export const eventsConfig = [
     apiUrl: "https://random-words-api.vercel.app/word",
   },
   {
-    name: "Quote",
+    name: "Quotes",
     iconUrl: quoteicon,
-    apiUrl: "https://inspiration.goprogram.ai/",
+    apiUrl: "https://programming-quotes-api.herokuapp.com/Quotes",
   },
 ];
