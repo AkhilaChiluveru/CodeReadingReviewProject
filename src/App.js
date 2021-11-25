@@ -29,7 +29,9 @@ function App() {
     return (
       <>
         <div className="AdviceDisplay">
-          <span>{`${data}`}</span>
+          <h1 className="advice">
+            <span>{`${data}`}</span>
+          </h1>
         </div>
       </>
     );
@@ -44,8 +46,9 @@ function App() {
           setDisplayData(createDisplayDataJoke(data.joke));
         } else if (eventName === "dictionary") {
           setDisplayData(createDisplayDataDictionary(data[0]));
-        }else if (eventName === "advice") {
-          setDisplayData(createDisplayDataAdvice(data.slip.advice)); }
+        } else if (eventName === "advice") {
+          setDisplayData(createDisplayDataAdvice(data.slip.advice));
+        }
       });
   };
 
