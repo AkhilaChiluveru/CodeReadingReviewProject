@@ -3,7 +3,6 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
 import './App.css';
 import MainNews from './Components/News/MainNews'
-import GIFs from './Components/GIFs/gif'
 import LaunchPage from './Components/LaunchPage/Launchpage';
 import jokeicon from './Logos/joke-icon.jpeg'
 import dictionaryicon from './Logos/dictionary-icon.png'
@@ -20,14 +19,7 @@ function App() {
   <LaunchPage />
     <div className = 'navContainer'>
       <Nav className="ml-auto" >
-          <NavItem className="navs">
-              <Link className="nav-link" to="/joke"> 
-                <div className="jokedisplay">
-                    <img id="jokeicon"src={jokeicon} alt="joke-logo" height="50em" width="50em"/>
-                    <p>Joke</p>
-                </div>
-              </Link>
-            </NavItem>
+          
 
           <NavItem className="navs">  
             <Link className="nav-link" to="/dictionary">
