@@ -24,6 +24,12 @@ export const eventsConfig = [
     apiUrl: "https://random-words-api.vercel.app/word",
   },
   {
+    name: "Events",
+    iconUrl: eventsicon,
+    apiUrl:
+      "https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&apikey=62FtsiHexAHvYoNSqzGB9eEDhG3HN4gv&size=100",
+  },
+  {
     name: "Quotes",
     iconUrl: quoteicon,
     apiUrl: "https://programming-quotes-api.herokuapp.com/Quotes",
