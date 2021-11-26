@@ -46,6 +46,24 @@ function App() {
       </div>
     );
   };
+  const createDisplayDataNews = (data) => {
+    return (
+      <>
+        {data.map((val) => {
+          return (
+            <>
+              <div className="NewsDisplay">
+                <img
+                  src={val.urlToImage}
+                />
+                <div>{`Title : ${val.title}`}</div>
+              </div>
+            </>
+          );
+        })}
+      </>
+    );
+  };
   const apiResponseHandler = (url, eventName) => {
     fetch(url)
       .then((res) => res.json())
@@ -61,6 +79,9 @@ function App() {
         }
         else if (eventName === "quotes") {
           setDisplayData(createDisplayDataQuotes(data.slice(0,100)));
+        }
+        else if (eventName === "news") {
+          setDisplayData(createDisplayDataNews(data.articles.slice(0, 5)));
         }
       });
   };
