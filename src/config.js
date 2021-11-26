@@ -35,9 +35,9 @@ export const eventsConfig = [
       "https://newsapi.org/v2/top-headlines?country=us&apiKey=e3bf50ba66e14c15a67b4d44091e78d3",
   },
   {
-    name: "GIFs",
+    name: "GIFs/memes",
     iconUrl: gifsicon,
-    apiUrl: "https://g.tenor.com/v1/random?q=excited&key=LIVDSRZULELA",
+    apiUrl: "https://meme-api.herokuapp.com/gimme/1",
   },
 ];
 
