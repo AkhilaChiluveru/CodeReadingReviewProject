@@ -55,8 +55,12 @@ function App() {
               <div className="NewsDisplay">
                 <img
                   src={val.urlToImage}
+                  height="20%"
+                  width="20%"
+                  alt="NewsImage"
                 />
                 <div>{`Title : ${val.title}`}</div>
+                <div>{`Description : ${val.description}`}</div>
               </div>
             </>
           );
