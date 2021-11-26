@@ -10,6 +10,10 @@ function App() {
   const [isEvent, setIsEvent] = useState(false);
   const [displayData, setDisplayData] = useState();
   const [isEvent, setIsEvent] = useState(false);
+  const stateCode = [
+    "ny",
+    "or",
+  ];
   const createDisplayDataJoke = (data) => {
     console.log("data from joke call" + data);
     return <div className="Jokedisplay">{data}</div>;
@@ -105,14 +109,21 @@ function App() {
           setIsEvent(true);
           let stateObjHolder = {};
           stateCode.forEach((state) => {
-            
+            let stateData = parseStateData(data._embedded.events, state);
+            stateObjHolder[state] = stateData;
           });
           console.log("dasda", stateObjHolder);
           setAllStateData(stateObjHolder);
 
           setDisplayData(createDisplayEventsData(stateObjHolder));
-         
+           let stateData = parseStateData(data._embedded.events);
+           setDisplayData(createDisplayDataEvents(stateData));
         }
+        eventsConfig.forEach((val)=>{
+               if(val.toLowerCase() === eventName){
+
+               }
+              })
       });
   };
 
