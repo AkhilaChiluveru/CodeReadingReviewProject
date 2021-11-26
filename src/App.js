@@ -9,6 +9,7 @@ import { eventsConfig } from "./config";
 function App() {
   const [isEvent, setIsEvent] = useState(false);
   const [displayData, setDisplayData] = useState();
+  const [stateSpecificData, setStateSpecificData] = useState();
   const [isEvent, setIsEvent] = useState(false);
   const stateCode = [
     "ny",
@@ -29,6 +30,35 @@ function App() {
       </>
     );
   };
+  const createDisplayEventsData = (piedata) => {
+    // {
+    //   "id": "php",
+    //   "label": "php",
+    //   "value": 95,
+    //   "color": "hsl(205, 70%, 50%)"
+    // }
+    console.log(222, piedata);
+    let data = [];
+    for (let key in piedata) {
+      let keyLabel;
+      if (key === "ny") {
+        keyLabel = "NewYork";
+      }
+      if (key === "or") {
+        keyLabel = "Oregon";
+      }
+let tempObj = {};
+      tempObj.id = key;
+      tempObj.label = keyLabel;
+      if (piedata[key].length > 1) {
+        tempObj.value = piedata[key].length - 1;
+      } else {
+        tempObj.value = piedata[key].length;
+      }
+
+      tempObj.color = "hsl(205, 70%, 50%)";
+      data.push(tempObj);
+    }}
   const createDisplayDataAdvice = (data) => {
     return (
       <>
