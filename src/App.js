@@ -98,7 +98,7 @@ function App() {
         else if (eventName === "news") {
           setDisplayData(createDisplayDataNews(data.articles.slice(0, 5)));
         }
-        else if (eventName === "gifs") {
+        else if (eventName === "gifs/memes") {
           setDisplayData(createDisplayDataGIFs(data));
         }
       });
