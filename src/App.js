@@ -58,7 +58,16 @@ let tempObj = {};
 
       tempObj.color = "hsl(205, 70%, 50%)";
       data.push(tempObj);
-    }}
+    }
+    const onClickHandler = (pieData, allData) => {
+      let piekey = pieData.data.id;
+      console.log("all state data", allData);
+      let stateData = allData[piekey];
+      setStateSpecificData(stateData);
+      console.log("this data", piekey, stateData);
+    };
+    return <PieChart piedata={piedata} fetchStateData={onClickHandler} />;
+  }
   const createDisplayDataAdvice = (data) => {
     return (
       <>
