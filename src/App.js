@@ -59,8 +59,8 @@ function App() {
                   width="20%"
                   alt="NewsImage"
                 />
-                <div>{`Title : ${val.title}`}</div>
-                <div>{`Description : ${val.description}`}</div>
+                <div className="Newstitle">{`Title : ${val.title}`}</div>
+                <div className="Newsdescription"> {`Description : ${val.description}`}</div>
               </div>
             </>
           );

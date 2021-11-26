@@ -7,7 +7,8 @@
 .Jokedisplay,
 .dictionarydisplay,
 .AdviceDisplay,
-.QuotesDisplay {
+.QuotesDisplay,
+.NewsDisplay {
   margin-top: 2em;
   border-radius: 1em;
   border: groove;
@@ -70,4 +71,11 @@
   50% {
     transform: translateY(-20px) rotate(3deg) scale(1.1);
   }
+}
+
+.Newstitle {
+  font-size: x-large;
+}
+.Newsdescription {
+  font-size: small;
 }
