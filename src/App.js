@@ -46,6 +46,17 @@ function App() {
       </div>
     );
   };
+  const createDisplayDataGIFs = (data) => {
+    console.log("datagifs" + data.url);
+    return (
+      <>
+        <div className="GIFdisplay">
+          {console.log("image:" + data.url)}
+          <img src={data.url} alt="GiFs" height="20%" width="20%" />
+        </div>
+      </>
+    );
+  };
   const createDisplayDataNews = (data) => {
     return (
       <>
@@ -86,6 +97,9 @@ function App() {
         }
         else if (eventName === "news") {
           setDisplayData(createDisplayDataNews(data.articles.slice(0, 5)));
+        }
+        else if (eventName === "gifs") {
+          setDisplayData(createDisplayDataGIFs(data));
         }
       });
   };

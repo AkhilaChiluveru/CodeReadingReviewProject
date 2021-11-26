@@ -34,5 +34,10 @@ export const eventsConfig = [
     apiUrl:
       "https://newsapi.org/v2/top-headlines?country=us&apiKey=e3bf50ba66e14c15a67b4d44091e78d3",
   },
+  {
+    name: "GIFs",
+    iconUrl: gifsicon,
+    apiUrl: "https://g.tenor.com/v1/random?q=excited&key=LIVDSRZULELA",
+  },
 ];
 
