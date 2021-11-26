@@ -9,7 +9,7 @@ import { eventsConfig } from "./config";
 function App() {
   const [isEvent, setIsEvent] = useState(false);
   const [displayData, setDisplayData] = useState();
-
+  const [isEvent, setIsEvent] = useState(false);
   const createDisplayDataJoke = (data) => {
     console.log("data from joke call" + data);
     return <div className="Jokedisplay">{data}</div>;
@@ -100,6 +100,18 @@ function App() {
         }
         else if (eventName === "gifs/memes") {
           setDisplayData(createDisplayDataGIFs(data));
+        }
+        else if (eventName === "events") {
+          setIsEvent(true);
+          let stateObjHolder = {};
+          stateCode.forEach((state) => {
+            
+          });
+          console.log("dasda", stateObjHolder);
+          setAllStateData(stateObjHolder);
+
+          setDisplayData(createDisplayEventsData(stateObjHolder));
+         
         }
       });
   };
