@@ -28,4 +28,11 @@ export const eventsConfig = [
     iconUrl: quoteicon,
     apiUrl: "https://programming-quotes-api.herokuapp.com/Quotes",
   },
+  {
+    name: "News",
+    iconUrl: newsicon,
+    apiUrl:
+      "https://newsapi.org/v2/top-headlines?country=us&apiKey=e3bf50ba66e14c15a67b4d44091e78d3",
+  },
 ];
+
