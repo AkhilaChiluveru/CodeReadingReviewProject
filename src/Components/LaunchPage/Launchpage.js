@@ -22,14 +22,8 @@ const LaunchPage = ({ slides }) => {
   return (
     <div>
       <section className="slider">
-        <FaArrowAltCircleLeft
-          className="left-arrow"
-          onMouseOverCapture={prevSlide}
-        />
-        <FaArrowAltCircleRight
-          className="right-arrow"
-          onMouseOverCapture={nextSlide}
-        />
+        <FaArrowAltCircleLeft className="left-arrow" onClick={prevSlide} />
+        <FaArrowAltCircleRight className="right-arrow" onClick={nextSlide} />
         {SliderData.map((slide, index) => {
           return (
             <div
