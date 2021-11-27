@@ -5,16 +5,24 @@ import LaunchPage from "./Components/LaunchPage/Launchpage";
 import Events from "./Components/Events/events";
 import Display from "./Components/DisplayEvent";
 import { eventsConfig } from "./config";
+import PieChart from "./Components/PieChart";
 
 function App() {
   const [isEvent, setIsEvent] = useState(false);
   const [displayData, setDisplayData] = useState();
   const [stateSpecificData, setStateSpecificData] = useState();
-  const [isEvent, setIsEvent] = useState(false);
+  const [allStateData, setAllStateData] = useState();
   const stateCode = [
     "ny",
     "or",
   ];
+
+  const parseStateData = (data, state) => {
+    let statedata = data.filter((val) => {
+      return val._embedded.venues[0].state.stateCode.toLowerCase() === state;
+    });
+    return statedata;
+  };
   const createDisplayDataJoke = (data) => {
     console.log("data from joke call" + data);
     return <div className="Jokedisplay">{data}</div>;
@@ -37,7 +45,7 @@ function App() {
     //   "value": 95,
     //   "color": "hsl(205, 70%, 50%)"
     // }
-    console.log(222, piedata);
+    console.log( "piedata" +piedata );
     let data = [];
     for (let key in piedata) {
       let keyLabel;
@@ -151,18 +159,18 @@ let tempObj = {};
             let stateData = parseStateData(data._embedded.events, state);
             stateObjHolder[state] = stateData;
           });
-          console.log("dasda", stateObjHolder);
+          console.log("details", stateObjHolder);
           setAllStateData(stateObjHolder);
 
           setDisplayData(createDisplayEventsData(stateObjHolder));
-           let stateData = parseStateData(data._embedded.events);
-           setDisplayData(createDisplayDataEvents(stateData));
+          // let stateData = parseStateData(data._embedded.events);
+           // setDisplayData(createDisplayDataEvents(stateData));
         }
-        eventsConfig.forEach((val)=>{
-               if(val.toLowerCase() === eventName){
+        //eventsConfig.forEach((val)=>{
+          //     if(val.toLowerCase() === eventName){
 
-               }
-              })
+            //   }
+            //  })
       });
   };
 
@@ -178,8 +186,16 @@ let tempObj = {};
       </div>
       <div className="output">
         {displayData && <Display displayContent={displayData} />}
+        {isEvent && (
+          <div
+            className="eventsTable"
+            style={{ position: "absolute", top: "500px", left: "500px" }}
+          >
+           
+        )}
       </div>
     </BrowserRouter>
   );
 }
 export default App;
+
