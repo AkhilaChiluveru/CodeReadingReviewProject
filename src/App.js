@@ -191,7 +191,12 @@ let tempObj = {};
             className="eventsTable"
             style={{ position: "absolute", top: "500px", left: "500px" }}
           >
-           
+           <div>Event List</div>
+            {stateSpecificData &&
+              stateSpecificData.map((val) => {
+                return <div>{val.name}</div>;
+              })}
+          </div>
         )}
       </div>
     </BrowserRouter>
