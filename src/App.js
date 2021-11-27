@@ -99,8 +99,14 @@ function App() {
     return (
       <>
         <div className="GIFdisplay">
-          {console.log("image:" + data.url)}
-          <img src={data.url} alt="GiFs" height="20%" width="20%" />
+          {console.log("image url:" + data.url)}
+          <img
+            className="GIFimageDisplay"
+            src={data.url}
+            alt="GiFs"
+            height="20%"
+            width="20%"
+          />
         </div>
       </>
     );
@@ -147,7 +153,7 @@ function App() {
         } else if (eventName === "news") {
           setDisplayData(createDisplayDataNews(data.articles.slice(0, 5)));
         } else if (eventName === "gifs/memes") {
-          setDisplayData(createDisplayDataGIFs(data));
+          setDisplayData(createDisplayDataGIFs(data.memes[0]));
         } else if (eventName === "events") {
           setIsEvent(true);
           let stateObjHolder = {};

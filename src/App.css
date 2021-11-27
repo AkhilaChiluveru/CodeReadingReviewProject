@@ -9,8 +9,7 @@
 .AdviceDisplay,
 .QuotesDisplay,
 .NewsDisplay,
-.pieChart,
-.GIFdisplay {
+.pieChart {
   margin-top: 2em;
   border-radius: 1em;
   border: groove;
@@ -83,11 +82,14 @@
 .Newsdescription {
   font-size: small;
 }
-video {
-  object-fit: cover;
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
+
+.GIFimageDisplay {
+  margin-top: 2em;
+  border-radius: 1em;
+  border: groove;
+  border-color: rgb(4, 131, 131);
+  padding: 1em;
+  margin-left: 40%;
+  box-shadow: 1px 2px 20px 7px #888;
+  opacity: 0.85;
 }
