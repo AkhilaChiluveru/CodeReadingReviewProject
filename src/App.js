@@ -6,16 +6,14 @@ import Events from "./Components/Events/events";
 import Display from "./Components/DisplayEvent";
 import { eventsConfig } from "./config";
 import PieChart from "./Components/PieChart";
+import { SliderData } from "./Components/LaunchPage/SliderData";
 
 function App() {
   const [isEvent, setIsEvent] = useState(false);
   const [displayData, setDisplayData] = useState();
   const [stateSpecificData, setStateSpecificData] = useState();
   const [allStateData, setAllStateData] = useState();
-  const stateCode = [
-    "ny",
-    "or",
-  ];
+  const stateCode = ["ny", "or"];
 
   const parseStateData = (data, state) => {
     let statedata = data.filter((val) => {
@@ -45,7 +43,7 @@ function App() {
     //   "value": 95,
     //   "color": "hsl(205, 70%, 50%)"
     // }
-    console.log( "piedata" +piedata );
+    console.log("piedata" + piedata);
     let data = [];
     for (let key in piedata) {
       let keyLabel;
@@ -55,7 +53,7 @@ function App() {
       if (key === "or") {
         keyLabel = "Oregon";
       }
-let tempObj = {};
+      let tempObj = {};
       tempObj.id = key;
       tempObj.label = keyLabel;
       if (piedata[key].length > 1) {
@@ -75,7 +73,7 @@ let tempObj = {};
       console.log("this data", piekey, stateData);
     };
     return <PieChart piedata={piedata} fetchStateData={onClickHandler} />;
-  }
+  };
   const createDisplayDataAdvice = (data) => {
     return (
       <>
@@ -88,12 +86,11 @@ let tempObj = {};
     );
   };
   const createDisplayDataQuotes = (data) => {
-   
     let RandomNumber = Math.floor(Math.random() * 100);
-    return ( 
-     <div className="QuotesDisplay">
-       <span>{data[RandomNumber].en} </span>
-       <span>{data[RandomNumber].author}</span>
+    return (
+      <div className="QuotesDisplay">
+        <span>{data[RandomNumber].en} </span>
+        <span>{data[RandomNumber].author}</span>
       </div>
     );
   };
@@ -122,7 +119,10 @@ let tempObj = {};
                   alt="NewsImage"
                 />
                 <div className="Newstitle">{`Title : ${val.title}`}</div>
-                <div className="Newsdescription"> {`Description : ${val.description}`}</div>
+                <div className="Newsdescription">
+                  {" "}
+                  {`Description : ${val.description}`}
+                </div>
               </div>
             </>
           );
@@ -142,17 +142,13 @@ let tempObj = {};
           setDisplayData(createDisplayDataDictionary(data[0]));
         } else if (eventName === "advice") {
           setDisplayData(createDisplayDataAdvice(data.slip.advice));
-        }
-        else if (eventName === "quotes") {
-          setDisplayData(createDisplayDataQuotes(data.slice(0,100)));
-        }
-        else if (eventName === "news") {
+        } else if (eventName === "quotes") {
+          setDisplayData(createDisplayDataQuotes(data.slice(0, 100)));
+        } else if (eventName === "news") {
           setDisplayData(createDisplayDataNews(data.articles.slice(0, 5)));
-        }
-        else if (eventName === "gifs/memes") {
+        } else if (eventName === "gifs/memes") {
           setDisplayData(createDisplayDataGIFs(data));
-        }
-        else if (eventName === "events") {
+        } else if (eventName === "events") {
           setIsEvent(true);
           let stateObjHolder = {};
           stateCode.forEach((state) => {
@@ -164,19 +160,19 @@ let tempObj = {};
 
           setDisplayData(createDisplayEventsData(stateObjHolder));
           // let stateData = parseStateData(data._embedded.events);
-           // setDisplayData(createDisplayDataEvents(stateData));
+          // setDisplayData(createDisplayDataEvents(stateData));
         }
         //eventsConfig.forEach((val)=>{
-          //     if(val.toLowerCase() === eventName){
+        //     if(val.toLowerCase() === eventName){
 
-            //   }
-            //  })
+        //   }
+        //  })
       });
   };
 
   return (
     <BrowserRouter>
-      <LaunchPage />
+      <LaunchPage slides={SliderData} />
       <div className="navContainer">
         <div className="AllIconsDisplay">
           {eventsConfig.map((data) => {
@@ -191,7 +187,7 @@ let tempObj = {};
             className="eventsTable"
             style={{ position: "absolute", top: "500px", left: "500px" }}
           >
-           <div>Event List</div>
+            <div>Event List</div>
             {stateSpecificData &&
               stateSpecificData.map((val) => {
                 return <div>{val.name}</div>;
@@ -203,4 +199,3 @@ let tempObj = {};
   );
 }
 export default App;
-

@@ -1,19 +1,54 @@
-import React from "react";
-import './launchpage.css'
+import React, { useState } from "react";
+import { SliderData } from "./SliderData";
+import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
+import "./launchpage.css";
 
-class LaunchPage extends React.Component {
-    render() {
-      
-        return (
-            <React.Fragment>
-                <div className="jumbotron" id="jumbo">
-                    <h1 className="display-3">Stress Reliver</h1>
-                    <p className="lead">Stress is common, but coming out of it is Fun!!</p>
-                    <p>Try these activities, and enjoy!</p>
-                </div>    
-                <div className="GIF"></div>
-            </React.Fragment>
-        )
-    }
-}
+const LaunchPage = ({ slides }) => {
+  const [current, setCurrent] = useState(0);
+  const length = slides.length;
+
+  const nextSlide = () => {
+    setCurrent(current === length - 1 ? 0 : current + 1);
+  };
+
+  const prevSlide = () => {
+    setCurrent(current === 0 ? length - 1 : current - 1);
+  };
+
+  if (!Array.isArray(slides) || slides.length <= 0) {
+    return null;
+  }
+
+  return (
+    <div>
+      <section className="slider">
+        <FaArrowAltCircleLeft
+          className="left-arrow"
+          onMouseOverCapture={prevSlide}
+        />
+        <FaArrowAltCircleRight
+          className="right-arrow"
+          onMouseOverCapture={nextSlide}
+        />
+        {SliderData.map((slide, index) => {
+          return (
+            <div
+              className={index === current ? "slide active" : "slide"}
+              key={index}
+            >
+              {index === current && (
+                <img
+                  src={slide.image}
+                  alt="stressreliefjumbotronimage"
+                  className="image"
+                />
+              )}
+            </div>
+          );
+        })}
+      </section>
+    </div>
+  );
+};
+
 export default LaunchPage;
