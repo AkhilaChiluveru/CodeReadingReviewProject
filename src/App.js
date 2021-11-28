@@ -14,18 +14,7 @@ function App() {
   const [displayData, setDisplayData] = useState();
   const [stateSpecificData, setStateSpecificData] = useState();
   const [allStateData, setAllStateData] = useState();
-  const stateCode = [
-    "ny",
-    "or",
-    "ca",
-    "wa",
-    "az",
-    "co",
-    "nj",
-    "il",
-    "ut",
-    "id",
-  ];
+  const stateCode = ["ny", "or", "ca", "wa", "az", "nv", "co", "ut"];
 
   const parseStateData = (data, state) => {
     let statedata = data.filter((val) => {
@@ -56,17 +45,21 @@ function App() {
     //   "color": "hsl(205, 70%, 50%)"
     // }
     console.log("piedata" + piedata);
+
     let data = [];
     for (let key in piedata) {
       let keyLabel;
-      if (key === "wa") {
-        keyLabel = "Washington";
+      if (key === "ny") {
+        keyLabel = "New York";
       }
       if (key === "or") {
         keyLabel = "Oregon";
       }
       if (key === "ca") {
         keyLabel = "California";
+      }
+      if (key === "wa") {
+        keyLabel = "Washington";
       }
       if (key === "az") {
         keyLabel = "Arizona";
@@ -76,18 +69,6 @@ function App() {
       }
       if (key === "co") {
         keyLabel = "Colorado";
-      }
-      if (key === "nj") {
-        keyLabel = "New Jersey";
-      }
-      if (key === "il") {
-        keyLabel = "Illinois";
-      }
-      if (key === "ut") {
-        keyLabel = "Utah";
-      }
-      if (key === "id") {
-        keyLabel = "Idaho";
       }
       let tempObj = {};
       tempObj.id = key;
@@ -232,6 +213,7 @@ function App() {
               <thead>
                 <tr>
                   <th>Event</th>
+
                   <th>Date</th>
                   <th>Site</th>
                 </tr>

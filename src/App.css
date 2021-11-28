@@ -118,8 +118,3 @@ td {
 tr:hover {
   background-color: rgba(0, 128, 128, 0.1);
 }
-.EventsAndPie {
-  display: flex;
-  border-radius: 1em;
-  border-color: black;
-}

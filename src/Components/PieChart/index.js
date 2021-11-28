@@ -4,14 +4,17 @@ const PieChart = ({ piedata, fetchStateData }) => {
   let data = [];
   for (let key in piedata) {
     let keyLabel;
-    if (key === "wa") {
-      keyLabel = "Washington";
+    if (key === "ny") {
+      keyLabel = "New York";
     }
     if (key === "or") {
       keyLabel = "Oregon";
     }
     if (key === "ca") {
       keyLabel = "California";
+    }
+    if (key === "wa") {
+      keyLabel = "Washington";
     }
     if (key === "az") {
       keyLabel = "Arizona";
@@ -22,18 +25,10 @@ const PieChart = ({ piedata, fetchStateData }) => {
     if (key === "co") {
       keyLabel = "Colorado";
     }
-    if (key === "nj") {
-      keyLabel = "New Jersey";
-    }
-    if (key === "il") {
-      keyLabel = "Illinois";
-    }
     if (key === "ut") {
       keyLabel = "Utah";
     }
-    if (key === "id") {
-      keyLabel = "Idaho";
-    }
+
     let tempObj = {};
     tempObj.id = key;
     tempObj.label = keyLabel;
@@ -51,8 +46,15 @@ const PieChart = ({ piedata, fetchStateData }) => {
     fetchStateData(pieData, allData);
   };
   return (
-    <div className="EventsAndPie" style={{ position: "relative" }}>
-      <div style={{ width: "500px", height: "500px" }}>
+    <div className="pieChart" style={{ position: "relative" }}>
+      <div
+        style={{
+          width: "50%",
+          height: "500px",
+          display: "flex",
+          wrap: "wrap",
+        }}
+      >
         <ResponsivePie
           data={data}
           onClick={(eventData) => onClickHandler(eventData, piedata)}
@@ -104,12 +106,12 @@ const PieChart = ({ piedata, fetchStateData }) => {
               anchor: "bottom",
               direction: "row",
               justify: false,
-              translateX: 0,
+              translateX: 10,
               translateY: 56,
               itemsSpacing: 0,
-              itemWidth: 100,
+              itemWidth: 90,
               itemHeight: 18,
-              itemTextColor: "#000",
+              itemTextColor: "#999",
               itemDirection: "left-to-right",
               itemOpacity: 1,
               symbolSize: 18,
@@ -118,7 +120,7 @@ const PieChart = ({ piedata, fetchStateData }) => {
                 {
                   on: "hover",
                   style: {
-                    itemTextColor: "#fff",
+                    itemTextColor: "#000",
                   },
                 },
               ],
