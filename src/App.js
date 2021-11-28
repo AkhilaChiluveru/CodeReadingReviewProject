@@ -71,7 +71,7 @@ function App() {
         keyLabel = "Colorado";
       }
       let tempObj = {};
-      tempObj.id = key;
+      tempObj.id = keyLabel;
       tempObj.label = keyLabel;
       tempObj.value = piedata[key].length;
 
@@ -80,7 +80,6 @@ function App() {
       } else {
         tempObj.value = piedata[key].length;
       }
-
       tempObj.color = "hsl(205, 70%, 50%)";
       data.push(tempObj);
     }
@@ -213,7 +212,6 @@ function App() {
               <thead>
                 <tr>
                   <th>Event</th>
-
                   <th>Date</th>
                   <th>Site</th>
                 </tr>
@@ -224,7 +222,6 @@ function App() {
                     <tbody>
                       <tr>
                         <td>{val.name}</td>
-
                         <td>{val.dates.start.localDate}</td>
                         <td>
                           <a href={val.url}>Link</a>
