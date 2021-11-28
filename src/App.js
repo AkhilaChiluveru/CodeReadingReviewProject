@@ -107,8 +107,12 @@ function App() {
     let RandomNumber = Math.floor(Math.random() * 100);
     return (
       <div className="QuotesDisplay">
-        <span>{data[RandomNumber].en} </span>
-        <span>{data[RandomNumber].author}</span>
+        <div className="Quote">
+          <q>{data[RandomNumber].en}</q>
+        </div>
+        <div>
+          <cite className="quoteauthorname">-{data[RandomNumber].author}</cite>
+        </div>
       </div>
     );
   };
