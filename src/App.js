@@ -7,13 +7,25 @@ import Display from "./Components/DisplayEvent";
 import { eventsConfig } from "./config";
 import PieChart from "./Components/PieChart";
 import { SliderData } from "./Components/LaunchPage/SliderData";
+import { Table } from "react-bootstrap";
 
 function App() {
   const [isEvent, setIsEvent] = useState(false);
   const [displayData, setDisplayData] = useState();
   const [stateSpecificData, setStateSpecificData] = useState();
   const [allStateData, setAllStateData] = useState();
-  const stateCode = ["ny", "or"];
+  const stateCode = [
+    "ny",
+    "or",
+    "ca",
+    "wa",
+    "az",
+    "co",
+    "nj",
+    "il",
+    "ut",
+    "id",
+  ];
 
   const parseStateData = (data, state) => {
     let statedata = data.filter((val) => {
@@ -47,15 +59,41 @@ function App() {
     let data = [];
     for (let key in piedata) {
       let keyLabel;
-      if (key === "ny") {
-        keyLabel = "NewYork";
+      if (key === "wa") {
+        keyLabel = "Washington";
       }
       if (key === "or") {
         keyLabel = "Oregon";
       }
+      if (key === "ca") {
+        keyLabel = "California";
+      }
+      if (key === "az") {
+        keyLabel = "Arizona";
+      }
+      if (key === "nv") {
+        keyLabel = "Nevada";
+      }
+      if (key === "co") {
+        keyLabel = "Colorado";
+      }
+      if (key === "nj") {
+        keyLabel = "New Jersey";
+      }
+      if (key === "il") {
+        keyLabel = "Illinois";
+      }
+      if (key === "ut") {
+        keyLabel = "Utah";
+      }
+      if (key === "id") {
+        keyLabel = "Idaho";
+      }
       let tempObj = {};
       tempObj.id = key;
       tempObj.label = keyLabel;
+      tempObj.value = piedata[key].length;
+
       if (piedata[key].length > 1) {
         tempObj.value = piedata[key].length - 1;
       } else {
@@ -188,17 +226,33 @@ function App() {
       </div>
       <div className="output">
         {displayData && <Display displayContent={displayData} />}
-        {isEvent && (
-          <div
-            className="eventsTable"
-            style={{ position: "absolute", top: "500px", left: "500px" }}
-          >
-            <div>Event List</div>
-            {stateSpecificData &&
-              stateSpecificData.map((val) => {
-                return <div>{val.name}</div>;
-              })}
-          </div>
+        {isEvent && stateSpecificData && (
+          <span className="EventsAndPie">
+            <table className="EventsTable">
+              <thead>
+                <tr>
+                  <th>Event</th>
+                  <th>Date</th>
+                  <th>Site</th>
+                </tr>
+              </thead>
+              {stateSpecificData &&
+                stateSpecificData.map((val) => {
+                  return (
+                    <tbody>
+                      <tr>
+                        <td>{val.name}</td>
+
+                        <td>{val.dates.start.localDate}</td>
+                        <td>
+                          <a href={val.url}>Link</a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  );
+                })}
+            </table>
+          </span>
         )}
       </div>
     </BrowserRouter>

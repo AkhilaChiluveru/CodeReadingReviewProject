@@ -1,17 +1,39 @@
 import React from "react";
 import { ResponsivePie } from "@nivo/pie";
 const PieChart = ({ piedata, fetchStateData }) => {
- 
   let data = [];
   for (let key in piedata) {
     let keyLabel;
-    if (key === "ny") {
-      keyLabel = "New York";
+    if (key === "wa") {
+      keyLabel = "Washington";
     }
     if (key === "or") {
       keyLabel = "Oregon";
     }
-    
+    if (key === "ca") {
+      keyLabel = "California";
+    }
+    if (key === "az") {
+      keyLabel = "Arizona";
+    }
+    if (key === "nv") {
+      keyLabel = "Nevada";
+    }
+    if (key === "co") {
+      keyLabel = "Colorado";
+    }
+    if (key === "nj") {
+      keyLabel = "New Jersey";
+    }
+    if (key === "il") {
+      keyLabel = "Illinois";
+    }
+    if (key === "ut") {
+      keyLabel = "Utah";
+    }
+    if (key === "id") {
+      keyLabel = "Idaho";
+    }
     let tempObj = {};
     tempObj.id = key;
     tempObj.label = keyLabel;
@@ -27,11 +49,10 @@ const PieChart = ({ piedata, fetchStateData }) => {
 
   const onClickHandler = (pieData, allData) => {
     fetchStateData(pieData, allData);
-    
   };
   return (
-    <div className="pieChart" style={{ position: "relative" }}>
-      <div style={{ width: "400px", height: "300px" }}>
+    <div className="EventsAndPie" style={{ position: "relative" }}>
+      <div style={{ width: "500px", height: "500px" }}>
         <ResponsivePie
           data={data}
           onClick={(eventData) => onClickHandler(eventData, piedata)}
@@ -69,35 +90,12 @@ const PieChart = ({ piedata, fetchStateData }) => {
           ]}
           fill={[
             {
-              match: { id: "ruby" },
+              match: { id: "ny" },
               id: "dots",
             },
+
             {
-              match: { id: "c" },
-              id: "dots",
-            },
-            {
-              match: { id: "go" },
-              id: "dots",
-            },
-            {
-              match: { id: "python" },
-              id: "dots",
-            },
-            {
-              match: { id: "scala" },
-              id: "lines",
-            },
-            {
-              match: { id: "lisp" },
-              id: "lines",
-            },
-            {
-              match: { id: "elixir" },
-              id: "lines",
-            },
-            {
-              match: { id: "javascript" },
+              match: { id: "az" },
               id: "lines",
             },
           ]}
