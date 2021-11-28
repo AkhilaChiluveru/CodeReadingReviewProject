@@ -8,8 +8,7 @@
 .dictionarydisplay,
 .AdviceDisplay,
 .QuotesDisplay,
-.NewsDisplay,
-.pieChart {
+.NewsDisplay {
   margin-top: 2em;
   border-radius: 1em;
   border: groove;
@@ -117,4 +116,9 @@ td {
 }
 tr:hover {
   background-color: rgba(0, 128, 128, 0.1);
+}
+.pieChart,
+.EventsTable {
+  margin-top: 5%;
+  margin-left: 30%;
 }
