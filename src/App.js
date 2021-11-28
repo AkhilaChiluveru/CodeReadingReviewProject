@@ -216,6 +216,8 @@ function App() {
               <thead>
                 <tr>
                   <th>Event</th>
+                  <th>city</th>
+                  <th>Zipcode </th>
                   <th>Date</th>
                   <th>Site</th>
                 </tr>
@@ -226,6 +228,8 @@ function App() {
                     <tbody>
                       <tr>
                         <td>{val.name}</td>
+                        <td> {val._embedded.venues[0].city.name}</td>
+                        <td>{val._embedded.venues[0].postalCode} </td>
                         <td>{val.dates.start.localDate}</td>
                         <td>
                           <a href={val.url}>Link</a>
