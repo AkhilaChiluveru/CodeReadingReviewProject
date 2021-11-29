@@ -139,18 +139,16 @@ function App() {
         {data.map((val) => {
           return (
             <>
-              <div className="NewsDisplay">
+              <div className="NewsDisplay" key={val.author}>
                 <img
                   src={val.urlToImage}
                   height="20%"
-                  width="20%"
+                  width="30%"
                   alt="NewsImage"
+                  className="NewsImageIcon"
                 />
-                <div className="Newstitle">{`Title : ${val.title}`}</div>
-                <div className="Newsdescription">
-                  {" "}
-                  {`Description : ${val.description}`}
-                </div>
+                <div className="Newstitle">{` ${val.title}`}</div>
+                <div className="Newsdescription"> {` ${val.description}`}</div>
               </div>
             </>
           );
