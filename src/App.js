@@ -149,6 +149,7 @@ function App() {
                 />
                 <div className="Newstitle">{` ${val.title}`}</div>
                 <div className="Newsdescription"> {` ${val.description}`}</div>
+                <div className="quoteauthorname"> {val.source.name}</div>
               </div>
             </>
           );
