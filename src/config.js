@@ -14,9 +14,20 @@ export const eventsConfig = [
     apiUrl: "https://geek-jokes.sameerkumar.website/api?format=json",
   },
   {
+    name: "GIFs/memes",
+    iconUrl: gifsicon,
+    apiUrl: "https://meme-api.herokuapp.com/gimme/1",
+  },
+  {
     name: "Advice",
     iconUrl: adviceicon,
     apiUrl: "https://api.adviceslip.com/advice",
+  },
+  {
+    name: "Events",
+    iconUrl: eventsicon,
+    apiUrl:
+      "https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&apikey=62FtsiHexAHvYoNSqzGB9eEDhG3HN4gv&size=100",
   },
   {
     name: "Dictionary",
@@ -24,10 +35,10 @@ export const eventsConfig = [
     apiUrl: "https://random-words-api.vercel.app/word",
   },
   {
-    name: "Events",
-    iconUrl: eventsicon,
+    name: "Music",
+    iconUrl: musicicon,
     apiUrl:
-      "https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&apikey=62FtsiHexAHvYoNSqzGB9eEDhG3HN4gv&size=100",
+      "https://ws.audioscrobbler.com/2.0/?method=artist.search&artist=cher&api_key=9773febf5ce07b68df5232fc1ff8e37b&format=json",
   },
   {
     name: "Quotes",
@@ -40,10 +51,4 @@ export const eventsConfig = [
     apiUrl:
       "https://newsapi.org/v2/top-headlines?country=us&apiKey=e3bf50ba66e14c15a67b4d44091e78d3",
   },
-  {
-    name: "GIFs/memes",
-    iconUrl: gifsicon,
-    apiUrl: "https://meme-api.herokuapp.com/gimme/1",
-  },
 ];
-
