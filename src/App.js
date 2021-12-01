@@ -7,6 +7,8 @@ import Display from "./Components/DisplayEvent";
 import { eventsConfig } from "./config";
 import PieChart from "./Components/PieChart";
 import { SliderData } from "./Components/LaunchPage/SliderData";
+import Song from "./Components/Music/songs";
+
 
 function App() {
   const [isEvent, setIsEvent] = useState(false);
@@ -112,6 +114,15 @@ function App() {
       </div>
     );
   };
+  const createDisplayMusic = (data) => {
+    console.log("Music data:" + data);
+
+    return (
+      <div className="MusicDisplay">
+        <Song />
+      </div>
+    );
+  };
   const createDisplayDataGIFs = (data) => {
     return (
       <>
@@ -167,7 +178,9 @@ function App() {
           setDisplayData(createDisplayDataQuotes(data.slice(0, 100)));
         } else if (eventName === "news") {
           setDisplayData(createDisplayDataNews(data.articles.slice(0, 5)));
-        } else if (eventName === "gifs/memes") {
+        } else if (eventName === "music") {
+          setDisplayData(createDisplayMusic(data));
+        }else if (eventName === "gifs/memes") {
           setDisplayData(createDisplayDataGIFs(data.memes[0]));
         } else if (eventName === "events") {
           setIsEvent(true);
