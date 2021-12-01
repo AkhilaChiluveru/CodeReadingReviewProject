@@ -34,7 +34,7 @@ import AudioPlayer from './index';
     },
   },
   {
-    
+    url:'https://www.talk2trend.com/english/maroon-5-girls-like-you.mp3',
     cover:
       'http://www.tenhomaisdiscosqueamigos.com/wp-content/uploads/2015/06/daft-punk.jpg',
     artist: {
