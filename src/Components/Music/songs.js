@@ -42,7 +42,13 @@ import AudioPlayer from './index';
       song: 'Girls like you ',
     }, 
   },
-  
+  {
+    url: 'https://www.talk2trend.com/english/see-you-again-ft-charlie-puth.mp3',
+    artist: {
+      name: 'Charlie Puth',
+      song: 'See you again',
+    },
+  },
   {
     url:
       'https://www.talk2trend.com/english/taki-taki-mp3-free-download.mp3',
