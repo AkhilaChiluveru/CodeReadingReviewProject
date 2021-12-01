@@ -7,7 +7,6 @@ import Display from "./Components/DisplayEvent";
 import { eventsConfig } from "./config";
 import PieChart from "./Components/PieChart";
 import { SliderData } from "./Components/LaunchPage/SliderData";
-import { Table } from "react-bootstrap";
 
 function App() {
   const [isEvent, setIsEvent] = useState(false);
@@ -23,7 +22,6 @@ function App() {
     return statedata;
   };
   const createDisplayDataJoke = (data) => {
-    console.log("data from joke call" + data);
     return <div className="Jokedisplay">{data}</div>;
   };
   const createDisplayDataDictionary = (data) => {
@@ -44,7 +42,6 @@ function App() {
     //   "value": 95,
     //   "color": "hsl(205, 70%, 50%)"
     // }
-    console.log("piedata" + piedata);
 
     let data = [];
     for (let key in piedata) {
@@ -85,7 +82,6 @@ function App() {
     }
     const onClickHandler = (pieData, allData) => {
       let piekey = pieData.data.id;
-      console.log("all state data", allData);
       let stateData = allData[piekey];
       setStateSpecificData(stateData);
       console.log("this data", piekey, stateData);
@@ -117,11 +113,9 @@ function App() {
     );
   };
   const createDisplayDataGIFs = (data) => {
-    console.log("datagifs" + data.url);
     return (
       <>
         <div className="GIFdisplay">
-          {console.log("image url:" + data.url)}
           <img
             className="GIFimageDisplay"
             src={data.url}
@@ -182,7 +176,6 @@ function App() {
             let stateData = parseStateData(data._embedded.events, state);
             stateObjHolder[state] = stateData;
           });
-          console.log("details", stateObjHolder);
           setAllStateData(stateObjHolder);
 
           setDisplayData(createDisplayEventsData(stateObjHolder));
@@ -225,7 +218,7 @@ function App() {
                 stateSpecificData.map((val) => {
                   return (
                     <tbody>
-                      <tr>
+                      <tr key={val.id}>
                         <td>{val.name}</td>
                         <td> {val._embedded.venues[0].city.name}</td>
                         <td>{val._embedded.venues[0].postalCode} </td>
