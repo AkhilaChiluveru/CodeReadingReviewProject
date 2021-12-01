@@ -33,7 +33,15 @@ import AudioPlayer from './index';
       song: 'Blank Space',
     },
   },
-  
+  {
+    
+    cover:
+      'http://www.tenhomaisdiscosqueamigos.com/wp-content/uploads/2015/06/daft-punk.jpg',
+    artist: {
+      name: 'Maroon',
+      song: 'Girls like you ',
+    }, 
+  },
   
   {
     url:
