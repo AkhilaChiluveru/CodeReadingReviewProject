@@ -3,6 +3,7 @@
   flex-wrap: wrap;
   justify-content: space-around;
 }
+
 .navContainer,
 .Jokedisplay,
 .dictionarydisplay,
@@ -167,12 +168,4 @@ q::after {
   100% {
     transform: rotate(13deg) scale(2);
   }
-}
-video {
-  object-fit: cover;
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
 }
