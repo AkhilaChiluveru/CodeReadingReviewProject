@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { SliderData } from "./SliderData";
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
 import "./launchpage.css";
-import video from './BackgroundVideo.mp4'
+import video from "./BackgroundVideo.mp4";
 const LaunchPage = ({ slides }) => {
   const [current, setCurrent] = useState(0);
   const length = slides.length;
@@ -26,14 +26,8 @@ const LaunchPage = ({ slides }) => {
       </video>
 
       <section className="slider">
-        <FaArrowAltCircleLeft
-          className="left-arrow"
-          onMouseOverCapture={prevSlide}
-        />
-        <FaArrowAltCircleRight
-          className="right-arrow"
-          onMouseOverCapture={nextSlide}
-        />
+        <FaArrowAltCircleLeft className="left-arrow" onClick={prevSlide} />
+        <FaArrowAltCircleRight className="right-arrow" onClick={nextSlide} />
         {SliderData.map((slide, index) => {
           return (
             <div
