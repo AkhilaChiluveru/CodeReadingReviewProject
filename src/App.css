@@ -9,7 +9,9 @@
 .dictionarydisplay,
 .AdviceDisplay,
 .QuotesDisplay,
-.NewsDisplay {
+.NewsDisplay,
+.musicDisplay,
+.EventsTable {
   margin-top: 2em;
   border-radius: 1em;
   border: groove;
@@ -100,7 +102,7 @@ table {
   font-size: 16px;
   font-family: sans-serif;
   border-collapse: collapse;
-  border: 1px solid rgba(185, 179, 179, 0.867);
+  border: 1px solid rgba(15, 14, 14, 0.867);
   width: 40%;
   overflow-x: auto;
 }
@@ -152,20 +154,24 @@ q::after {
   0% {
     transform: rotate(13deg) scale(2);
   }
-
   25% {
     transform: rotate(0deg);
   }
-
   50% {
     transform: rotate(-13deg) scale(2);
   }
-
   75% {
     transform: rotate(0deg);
   }
-
   100% {
     transform: rotate(13deg) scale(2);
   }
+}
+video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
