@@ -5,6 +5,7 @@ Deployed Website: https://stressfree.netlify.app/
 #### Application Features
 
 -Stress Free Application is basically a collection of options like: jokes,quotes,advice,music,events and GIFs,News
+
 -Joke: Data fetched from JOKE API and fetched on UI.
 -Dictionary- Word,meaning and pronunciation are displayed. 
 -News: Five news highlights are displayed. This data is refreshed on daily basis.
