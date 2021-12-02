@@ -49,10 +49,8 @@ const PieChart = ({ piedata, fetchStateData }) => {
     <div className="pieChart" style={{ position: "relative" }}>
       <div
         style={{
-          width: "50%",
-          height: "500px",
-          display: "flex",
-          wrap: "wrap",
+          width: "650px",
+          height: "650px",
         }}
       >
         <ResponsivePie
@@ -95,7 +93,14 @@ const PieChart = ({ piedata, fetchStateData }) => {
               match: { id: "ny" },
               id: "dots",
             },
-
+            {
+              match: { id: "ca" },
+              id: "dots",
+            },
+            {
+              match: { id: "or" },
+              id: "lines",
+            },
             {
               match: { id: "az" },
               id: "lines",
