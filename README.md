@@ -25,10 +25,10 @@ Advice-Advice is taken from response of API and displayed on site.
 ### npm packages used
 
 - react-router-dom
-  -react
-  - @nivo/core @nivo/pie (Pie chart)
-  - react-icons (carousel navigation items)
-  -react-bootstrap
+-react
+- @nivo/core @nivo/pie (Pie chart)
+- react-icons (carousel navigation items)
+- -react-bootstrap
 
 ### APIs used
 
