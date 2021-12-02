@@ -9,7 +9,6 @@ import PieChart from "./Components/PieChart";
 import { SliderData } from "./Components/LaunchPage/SliderData";
 import Song from "./Components/Music/songs";
 
-
 function App() {
   const [isEvent, setIsEvent] = useState(false);
   const [displayData, setDisplayData] = useState();
@@ -38,13 +37,6 @@ function App() {
     );
   };
   const createDisplayEventsData = (piedata) => {
-    // {
-    //   "id": "php",
-    //   "label": "php",
-    //   "value": 95,
-    //   "color": "hsl(205, 70%, 50%)"
-    // }
-
     let data = [];
     for (let key in piedata) {
       let keyLabel;
@@ -115,13 +107,18 @@ function App() {
     );
   };
   const createDisplayMusic = (data) => {
-    console.log("Music data:" + data);
-
-    return (
-      <div className="MusicDisplay">
-        <Song />
-      </div>
-    );
+    if (data) {
+      return (
+        <div className="MusicDisplay">
+          <Song />
+        </div>
+      );
+    } else
+      return (
+        <>
+          <Song />
+        </>
+      );
   };
   const createDisplayDataGIFs = (data) => {
     return (
@@ -166,7 +163,6 @@ function App() {
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setIsEvent(false);
         if (eventName === "jokes") {
           setDisplayData(createDisplayDataJoke(data.joke));
@@ -180,7 +176,7 @@ function App() {
           setDisplayData(createDisplayDataNews(data.articles.slice(0, 5)));
         } else if (eventName === "music") {
           setDisplayData(createDisplayMusic(data));
-        }else if (eventName === "gifs/memes") {
+        } else if (eventName === "gifs/memes") {
           setDisplayData(createDisplayDataGIFs(data.memes[0]));
         } else if (eventName === "events") {
           setIsEvent(true);
@@ -192,14 +188,7 @@ function App() {
           setAllStateData(stateObjHolder);
 
           setDisplayData(createDisplayEventsData(stateObjHolder));
-          // let stateData = parseStateData(data._embedded.events);
-          // setDisplayData(createDisplayDataEvents(stateData));
         }
-        //eventsConfig.forEach((val)=>{
-        //     if(val.toLowerCase() === eventName){
-
-        //   }
-        //  })
       });
   };
 
