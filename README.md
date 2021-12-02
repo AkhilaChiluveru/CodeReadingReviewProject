@@ -38,11 +38,17 @@ Advice-Advice is taken from response of API and displayed on site.
 ### APIs used
 
 Jokehttps://geek-jokes.sameerkumar.website/api?format=json
+
 Advice-https://api.adviceslip.com/advice
+
 Dictionary-https://random-words-api.vercel.app/word
-Events-https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&apikey=$$$
+
+Events-https://app.ticketmaster.com/discovery/v2/
+
 Quotes-https://programming-quotes-api.herokuapp.com/Quotes
-News-https://newsapi.org/v2/top-headlines?country=us&apiKey=$$$$
+
+News-https://newsapi.org/v2/top-headlines?country=us
+
 GiFs/Memeshttps://meme-api.herokuapp.com/gimme/1
 
 ### To run the project `npm start`
