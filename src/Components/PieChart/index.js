@@ -32,8 +32,8 @@ const PieChart = ({ piedata, fetchStateData }) => {
     let tempObj = {};
     tempObj.id = key;
     tempObj.label = keyLabel;
-    if (piedata[key].length > 1) {
-      tempObj.value = piedata[key].length - 1;
+    if (piedata[key].length - 1 > 1) {
+      tempObj.value = piedata[key].length;
     } else {
       tempObj.value = piedata[key].length;
     }
@@ -49,10 +49,8 @@ const PieChart = ({ piedata, fetchStateData }) => {
     <div className="pieChart" style={{ position: "relative" }}>
       <div
         style={{
-          width: "50%",
-          height: "500px",
-          display: "flex",
-          wrap: "wrap",
+          width: "600px",
+          height: "600px",
         }}
       >
         <ResponsivePie
@@ -95,7 +93,14 @@ const PieChart = ({ piedata, fetchStateData }) => {
               match: { id: "ny" },
               id: "dots",
             },
-
+            {
+              match: { id: "ca" },
+              id: "dots",
+            },
+            {
+              match: { id: "or" },
+              id: "lines",
+            },
             {
               match: { id: "az" },
               id: "lines",
