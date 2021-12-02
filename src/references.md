@@ -18,6 +18,43 @@ https://www.w3schools.com/css/css_text_transformation.asp
 
 https://codepen.io/bennettfeely/pen/CkHng/![image]
 
+https://cssreference.io/
+
+https://www.w3schools.com/tags/default.asp
+
+https://codepen.io/tniezurawski/pen/wvzyVEE
+
+https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics
+
+https://www.w3schools.com/js/js_events.asp
+
+https://www.w3schools.com/js/js_type_conversion.asp
+
+https://www.w3schools.com/js/js_functions.asp
+  
+  
+ React: 
+
+https://reactjs.org/
+  
+https://stackoverflow.com/questions/69854011/matched-leaf-route-at-location-does-not-have-an-element
+  
+https://www.w3schools.com/REACT/DEFAULT.ASP
+  
+https://www.w3schools.com/REACT/react_props.asp
+  
+https://reactjs.org/docs/components-and-props.html
+  
+https://reactjs.org/docs/react-component.html
+
+https://reactjs.org/tutorial/tutorial.html
+
+https://www.w3schools.com/REACT/DEFAULT.ASP
+
+https://www.youtube.com/watch?v=DLX62G4lc44
+
+https://reactjs.org/docs/react-component.html
+
 
 
 icons:
