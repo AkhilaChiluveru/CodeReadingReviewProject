@@ -1,4 +1,3 @@
-## X-rates Dash
 
 Deployed Website: https://stressfree.netlify.app/
 
@@ -7,11 +6,17 @@ Deployed Website: https://stressfree.netlify.app/
 -Stress Free Application is basically a collection of options like: jokes,quotes,advice,music,events and GIFs,News
 
 -Joke: Data fetched from JOKE API and fetched on UI.
+
 -Dictionary- Word,meaning and pronunciation are displayed. 
+
 -News: Five news highlights are displayed. This data is refreshed on daily basis.
+
 Quote: Quote is fetched and rendered on UI
+
 -GiFs/memes: API has both mems and GIFs available. Any of one is displayed.
+
 -Event:Displays a piechart that depicts number of events in that state and list of events present in that particular state.
+
 Advice-Advice is taken from response of API and displayed on site.
 
 ### Technologies Used
