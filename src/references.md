@@ -6,6 +6,7 @@ https://www.w3schools.com/howto/howto_css_fullscreen_video.asp -> adding video i
 
 https://dev.to/daveguz97/adding-sound-to-a-react-project-51m3 -> for music code
 
+https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement
 
 pie chart :
 https://nivo.rocks/pie/ 
