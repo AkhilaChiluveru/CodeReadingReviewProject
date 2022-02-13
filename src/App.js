@@ -10,20 +10,27 @@ function App() {
   const [isEvent, setIsEvent] = useState(false);
   const [displayData, setDisplayData] = useState();
 
+  // adding function that will display jokes when user will hover over jokes 
+
   const createDisplayDataJoke = (data) => {
     return <div className="Jokedisplay">{data}</div>;
   };
+
+  // adding function that will display word and its meaning from dictionary data when user will hover over dictionary
+  // It is done by first fetching word and definition and after that fetching pronounciation from API
+
   const createDisplayDataDictionary = (data) => {
     return (
       <>
         <div className="dictionarydisplay">
-          <div className="dictionaryWord">{`${data.word}`}</div>
+          <div className="dictionaryWord">{`${data.word}`}</div>  
           <div className="dictionaryDefinition">{`Meaning: ${data.definition}`}</div>
           <div className="dictionaryPronunciation">{`Pronunciation:   ${data.pronunciation}`}</div>
         </div>
       </>
     );
   };
+
   const createDisplayDataAdvice = (data) => {
     return (
       <div className="AdviceDisplay">
@@ -33,6 +40,7 @@ function App() {
       </div>
     );
   };
+
   const createDisplayDataQuotes = (data) => {
     let RandomNumber = Math.floor(Math.random() * 100);
     return (
