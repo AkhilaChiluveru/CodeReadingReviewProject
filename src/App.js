@@ -33,6 +33,9 @@ function App() {
       </div>
     );
   };
+  /* ....
+  ..This function displays the quotes and the name of the author 
+  ...*/
   const createDisplayDataQuotes = (data) => {
     let RandomNumber = Math.floor(Math.random() * 100);
     return (
