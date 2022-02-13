@@ -1,12 +1,11 @@
 import { BrowserRouter } from "react-router-dom";
 import React, { useState } from "react";
-import "./App.css";
 import LaunchPage from "./Components/LaunchPage/Launchpage";
 import Events from "./Components/Events/events";
-import Display from "./Components/DisplayEvent/index";
+import Display from "./Components/Events/index";
 import { eventsConfig } from "./config";
 import { SliderData } from "./Components/LaunchPage/SliderData";
-
+import "./App.css";
 function App() {
   const [isEvent, setIsEvent] = useState(false);
   const [displayData, setDisplayData] = useState();

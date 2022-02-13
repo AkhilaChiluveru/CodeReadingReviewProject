@@ -2,7 +2,6 @@ import jokeicon from "./Logos/joke-icon.jpeg";
 import dictionaryicon from "./Logos/dictionary-icon.png";
 import newsicon from "./Logos/news-icon.png";
 import gifsicon from "./Logos/GIfs-icon.gif";
-
 import quoteicon from "./Logos/quote-icon.jpeg";
 import adviceicon from "./Logos/advice-icon.png";
 
