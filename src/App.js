@@ -26,13 +26,11 @@ function App() {
   };
   const createDisplayDataAdvice = (data) => {
     return (
-      <>
-        <div className="AdviceDisplay">
-          <h1 className="advice">
-            <span>{`${data}`}</span>
-          </h1>
-        </div>
-      </>
+      <div className="AdviceDisplay">
+        <h1 className="advice">
+          <span>{`${data}`}</span>
+        </h1>
+      </div>
     );
   };
   const createDisplayDataQuotes = (data) => {
@@ -51,17 +49,15 @@ function App() {
 
   const createDisplayDataGIFs = (data) => {
     return (
-      <>
-        <div className="GIFdisplay">
-          <img
-            className="GIFimageDisplay"
-            src={data.url}
-            alt="GiFs"
-            height="20%"
-            width="20%"
-          />
-        </div>
-      </>
+      <div className="GIFdisplay">
+        <img
+          className="GIFimageDisplay"
+          src={data.url}
+          alt="GiFs"
+          height="20%"
+          width="20%"
+        />
+      </div>
     );
   };
   const createDisplayDataNews = (data) => {
@@ -69,20 +65,18 @@ function App() {
       <>
         {data.map((val) => {
           return (
-            <>
-              <div className="NewsDisplay" key={val.author}>
-                <img
-                  src={val.urlToImage}
-                  height="20%"
-                  width="30%"
-                  alt="NewsImage"
-                  className="NewsImageIcon"
-                />
-                <div className="Newstitle">{` ${val.title}`}</div>
-                <div className="Newsdescription"> {` ${val.description}`}</div>
-                <div className="quoteauthorname"> {val.source.name}</div>
-              </div>
-            </>
+            <div className="NewsDisplay" key={val.author}>
+              <img
+                src={val.urlToImage}
+                height="20%"
+                width="30%"
+                alt="NewsImage"
+                className="NewsImageIcon"
+              />
+              <div className="Newstitle">{` ${val.title}`}</div>
+              <div className="Newsdescription"> {` ${val.description}`}</div>
+              <div className="quoteauthorname"> {val.source.name}</div>
+            </div>
           );
         })}
       </>
