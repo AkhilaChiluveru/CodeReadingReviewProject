@@ -40,7 +40,13 @@ function App() {
       </div>
     );
   };
+<<<<<<< HEAD
 
+=======
+  /* ....
+  ..This function displays the quotes and the name of the author 
+  ...*/
+>>>>>>> afbf582afa792f878d8b96ba5db058f03484d9dc
   const createDisplayDataQuotes = (data) => {
     let RandomNumber = Math.floor(Math.random() * 100);
     return (
