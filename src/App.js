@@ -97,6 +97,9 @@ function App() {
       </>
     );
   };
+  /*..
+  This is the response handler code for all the functions- jokes, dictionary, advice, quotes, news and gifs
+  */ 
   const apiResponseHandler = (url, eventName) => {
     fetch(url)
       .then((res) => res.json())
