@@ -31,7 +31,10 @@ function App() {
       </>
     );
   };
-
+ 
+  /*...
+  Here, this is the function for Advice, user can click on this to see the advice.
+  ...*/
   const createDisplayDataAdvice = (data) => {
     return (
       <div className="AdviceDisplay">
@@ -43,9 +46,8 @@ function App() {
   };
 
   /* ....
-  ..This function displays the quotes and the name of the author 
+  ..This function displays the quotes and the name of the author of that quote
   ...*/
-
   const createDisplayDataQuotes = (data) => {
     let RandomNumber = Math.floor(Math.random() * 100);
     return (
