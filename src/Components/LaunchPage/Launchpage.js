@@ -19,6 +19,10 @@ const LaunchPage = ({ slides }) => {
     return null;
   }
 
+  /* ....
+  ..returning different background image above icons when user click on left or right arrow
+  ...*/
+
   return (
     <div>
       <video autoPlay="autoplay" loop="loop" muted>
