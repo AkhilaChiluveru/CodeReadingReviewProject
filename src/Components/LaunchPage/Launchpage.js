@@ -1,3 +1,7 @@
+/* In this file, Carousel and video background are implemented using
+relevant files to capture data. as in, Sliding images from slierdata file and 
+Video as background from mp4 file.
+ */
 import React, { useState } from "react";
 import { SliderData } from "./SliderData";
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
