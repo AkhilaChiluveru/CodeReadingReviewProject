@@ -1,3 +1,8 @@
+/* This is the main invoking file of this project,
+browserrouter tag, renders all the content in the UI 
+by calling various methods.
+*/
+
 import { BrowserRouter } from "react-router-dom";
 import React, { useState } from "react";
 import LaunchPage from "./Components/LaunchPage/Launchpage";
