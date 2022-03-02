@@ -1,3 +1,6 @@
+/* These paths are direct web images that are loaded from webpage and displayed on Stress Reliever
+This file data is used in LaunchPage.js for carousel
+ */
 export const SliderData = [
   {
     image: "https://i.ytimg.com/vi/se_D6dgP65k/maxresdefault.jpg",
