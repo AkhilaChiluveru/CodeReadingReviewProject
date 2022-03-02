@@ -1,3 +1,7 @@
+/* This is configuration file that maps every icons with it's 
+respective logo and API's 
+*/ 
+
 import jokeicon from "./Logos/joke-icon.jpeg";
 import dictionaryicon from "./Logos/dictionary-icon.png";
 import newsicon from "./Logos/news-icon.png";
