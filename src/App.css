@@ -6,8 +6,7 @@
 
 .navContainer,
 .Jokedisplay,
-.IconDisplay,
-.NewsDisplay {
+.IconDisplay {
   margin-top: 2em;
   border-radius: 1em;
   border: groove;
@@ -102,7 +101,7 @@
   align-items: center;
   padding-top: 1%;
 }
-.quoteauthorname {
+.authorname {
   color: gray;
   display: flex;
   justify-content: flex-end;
