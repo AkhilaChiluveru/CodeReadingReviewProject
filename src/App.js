@@ -10,7 +10,6 @@ function App() {
   const [isEvent, setIsEvent] = useState(false);
   const [displayData, setDisplayData] = useState();
 
-
   const createDisplayDataJoke = (data) => {
     return <div className="Jokedisplay">{data}</div>;
   };
@@ -23,21 +22,21 @@ function App() {
   const createDisplayDataDictionary = (data) => {
     return (
       <>
-        <div className="dictionarydisplay">
-          <div className="dictionaryWord">{`${data.word}`}</div>  
+        <div className="IconDisplay">
+          <div className="dictionaryWord">{`${data.word}`}</div>
           <div className="dictionaryDefinition">{`Meaning: ${data.definition}`}</div>
           <div className="dictionaryPronunciation">{`Pronunciation:   ${data.pronunciation}`}</div>
         </div>
       </>
     );
   };
- 
+
   /*...
   Here, this is the function for Advice, user can click on this to see the advice.
   ...*/
   const createDisplayDataAdvice = (data) => {
     return (
-      <div className="AdviceDisplay">
+      <div className="IconDisplay">
         <h1 className="advice">
           <span>{`${data}`}</span>
         </h1>
@@ -51,7 +50,7 @@ function App() {
   const createDisplayDataQuotes = (data) => {
     let RandomNumber = Math.floor(Math.random() * 100);
     return (
-      <div className="QuotesDisplay">
+      <div className="IconDisplay">
         <div className="Quote">
           <q>{data[RandomNumber].en}</q>
         </div>
@@ -99,7 +98,7 @@ function App() {
   };
   /*..
   This is the response handler code for all the functions- jokes, dictionary, advice, quotes, news and gifs
-  */ 
+  */
   const apiResponseHandler = (url, eventName) => {
     fetch(url)
       .then((res) => res.json())
