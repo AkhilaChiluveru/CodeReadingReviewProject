@@ -55,7 +55,7 @@ function App() {
           <q>{data[RandomNumber].en}</q>
         </div>
         <div>
-          <cite className="quoteauthorname">-{data[RandomNumber].author}</cite>
+          <cite className="authorname">-{data[RandomNumber].author}</cite>
         </div>
       </div>
     );
@@ -63,7 +63,7 @@ function App() {
 
   const createDisplayDataGIFs = (data) => {
     return (
-      <div className="GIFdisplay">
+      <div className="IconDisplay">
         <img
           className="GIFimageDisplay"
           src={data.url}
@@ -79,7 +79,7 @@ function App() {
       <>
         {data.map((val) => {
           return (
-            <div className="NewsDisplay" key={val.author}>
+            <div className="IconDisplay" key={val.author}>
               <img
                 src={val.urlToImage}
                 height="20%"
@@ -89,7 +89,7 @@ function App() {
               />
               <div className="Newstitle">{` ${val.title}`}</div>
               <div className="Newsdescription"> {` ${val.description}`}</div>
-              <div className="quoteauthorname"> {val.source.name}</div>
+              <div className="authorname"> {val.source.name}</div>
             </div>
           );
         })}
