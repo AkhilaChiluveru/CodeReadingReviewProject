@@ -43,6 +43,7 @@ function App() {
   /*...
   This function will display Advice, user can click on this to see the advice.
   ...*/
+  
   const createDisplayDataAdvice = (data) => {
     return (
       <div className="IconDisplay">
@@ -56,6 +57,7 @@ function App() {
   /* ....
   ..This function will display the quotes and the name of the author of that quote
   ...*/
+
   const createDisplayDataQuotes = (data) => {
     let RandomNumber = Math.floor(Math.random() * 100);
     return (
@@ -114,9 +116,11 @@ function App() {
       </>
     );
   };
+
   /*..
   This is the response handler code for all the functions- jokes, dictionary, advice, quotes, news and gifs
   */
+
   const apiResponseHandler = (url, eventName) => {
     fetch(url)
       .then((res) => res.json())
