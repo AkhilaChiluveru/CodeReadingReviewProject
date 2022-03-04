@@ -24,7 +24,7 @@ const LaunchPage = ({ slides }) => {
   }
 
   /* ....
-  ..returning different background image above icons when user click on left or right arrow
+  It returns different background image above icons in application when user click on left or right arrow
   ...*/
 
   return (

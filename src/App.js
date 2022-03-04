@@ -15,6 +15,10 @@ function App() {
   const [isEvent, setIsEvent] = useState(false);
   const [displayData, setDisplayData] = useState();
 
+  /*...
+  This function will display different Joke when user hover over the icon
+  ...*/
+
   const createDisplayDataJoke = (data) => {
     return <div className="Jokedisplay">{data}</div>;
   };
