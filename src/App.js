@@ -20,7 +20,7 @@ function App() {
   };
 
   /*....
-  adding function that will display word and its meaning from dictionary data when user will hover over dictionary.
+  This function will display word and its meaning from dictionary data when user will hover over dictionary.
   It is done by first fetching word and definition and after that fetching pronounciation from API
   ....*/
 
@@ -37,7 +37,7 @@ function App() {
   };
 
   /*...
-  Here, this is the function for Advice, user can click on this to see the advice.
+  This function will display Advice, user can click on this to see the advice.
   ...*/
   const createDisplayDataAdvice = (data) => {
     return (
@@ -50,7 +50,7 @@ function App() {
   };
 
   /* ....
-  ..This function displays the quotes and the name of the author of that quote
+  ..This function will display the quotes and the name of the author of that quote
   ...*/
   const createDisplayDataQuotes = (data) => {
     let RandomNumber = Math.floor(Math.random() * 100);
@@ -66,6 +66,10 @@ function App() {
     );
   };
 
+  /* ....
+  ..This function will display new GIF every time user will hover over it
+  ...*/
+
   const createDisplayDataGIFs = (data) => {
     return (
       <div className="IconDisplay">
@@ -79,6 +83,11 @@ function App() {
       </div>
     );
   };
+
+  /* ....
+  ..This function will display brief news to user with title, description, author name and image
+  ...*/
+
   const createDisplayDataNews = (data) => {
     return (
       <>
