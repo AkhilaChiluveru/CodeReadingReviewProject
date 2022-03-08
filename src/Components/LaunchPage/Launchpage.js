@@ -10,11 +10,11 @@ import video from "./BackgroundVideo.mp4";
 const LaunchPage = ({ slides }) => {
   const [current, setCurrent] = useState(0);
   const length = slides.length;
-
+  /* checking -if next slide is the last slide, then assigning it to 0 to navigate back to fist slide */
   const nextSlide = () => {
     setCurrent(current === length - 1 ? 0 : current + 1);
   };
-
+  /* checking -if previous slide is the first slide, then assigning it to last indext to navigate back to last image */
   const prevSlide = () => {
     setCurrent(current === 0 ? length - 1 : current - 1);
   };
